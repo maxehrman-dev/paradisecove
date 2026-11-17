@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Flat color only: no gradients, no shadows anywhere on the site. */
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-paper text-navy font-label antialiased; font-weight: 500; overflow-x: clip; }
+  ::selection { background: #E8A0B4; color: #1C2B4A; }
+  :focus-visible { outline: 2px solid #1C2B4A; outline-offset: 3px; }
+}
+
+@layer components {
+  /* Paradise Cove */
+  .pc-head { @apply font-cove uppercase; font-weight: 900; line-height: .95; }
+  .pc-label { @apply font-label uppercase; font-weight: 800; letter-spacing: .3em; font-size: 11px; }
+  /* Club Paradise */
+  .cp-head { @apply font-club uppercase; font-weight: 900; font-stretch: 125%; line-height: .9; letter-spacing: -.01em; }
+  .cp-club { @apply font-caslon uppercase; font-weight: 700; letter-spacing: .22em; }
+  .cp-quote { @apply font-caslon italic; font-weight: 400; }
+  .cp-fine { @apply font-club uppercase; font-weight: 600; letter-spacing: .26em; font-size: 11px; }
+  .wrap { @apply mx-auto w-full max-w-site px-4 sm:px-6; }
+  /* Placeholder slot for a missing photo. Never a fake image. */
+  .slot { @apply relative grid place-items-center border-2 border-dashed border-navy/30 bg-cream text-center text-navy/70; }
+}
+
+/* Logos only fade in. */
+.logo-fade { animation: logo-fade 1s ease-out both; }
+@keyframes logo-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* The looping waterline. */
+.waterline { animation: waterline var(--dur, 14s) linear infinite; will-change: transform; }
+.waterline-rev { animation-direction: reverse; }
+@keyframes waterline { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-fade, .waterline { animation: none !important; }
+  html { scroll-behavior: auto; }
+}

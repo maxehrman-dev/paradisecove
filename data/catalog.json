@@ -1,0 +1,45 @@
+{
+  "collections": {
+    "paradise-cove": {
+      "name": "Paradise Cove",
+      "audience": "Women's",
+      "path": "/paradise-cove",
+      "line": "Sun · Salt · Surf"
+    },
+    "club-paradise": {
+      "name": "Club Paradise",
+      "audience": "Men's",
+      "path": "/club-paradise",
+      "line": "Surf · Siesta · Sunset"
+    }
+  },
+  "products": [
+    {
+      "id": "off-shoulder-crewneck",
+      "name": "Off-Shoulder Crewneck",
+      "collection": "paradise-cove",
+      "price": 65,
+      "status": "first-drop",
+      "line": "Pink thread on cream cotton. Made for long beach days.",
+      "images": { "front": "crewneck-front.jpg", "back": "crewneck-back.jpg", "details": ["crewneck-embroidery-turtle.jpg", "crewneck-embroidery-palm-cuff.jpg"] }
+    },
+    { "id": "tee-01-la-jolla-coconut", "name": "La Jolla Coconut Tee", "number": "01", "collection": "club-paradise", "club": null, "price": 40, "status": "first-drop", "images": { "front": "tee-01-front.jpg", "back": "tee-01-back.jpg" } },
+    { "id": "tee-03-torrey-pine", "name": "Torrey Pine Tee", "number": "03", "collection": "club-paradise", "club": null, "price": 40, "status": "first-drop", "images": { "front": "tee-03-front.jpg", "back": "tee-03-back.jpg" } },
+    { "id": "tee-05-citrus-co", "name": "Citrus Co. Tee", "number": "05", "collection": "club-paradise", "club": null, "price": 40, "status": "first-drop", "images": { "front": "tee-05-front.jpg", "back": "tee-05-back.jpg" } },
+    { "id": "tee-06-surf-and-saddle", "name": "Surf & Saddle Tee", "number": "06", "collection": "club-paradise", "club": null, "price": 40, "status": "first-drop", "images": { "front": "tee-06-front.jpg", "back": "tee-06-back.jpg" } },
+    { "id": "tee-11-yacht-club", "name": "Yacht Club Tee", "number": "11", "collection": "club-paradise", "club": "yacht-club", "price": 40, "status": "first-drop", "images": { "front": "tee-11-front.jpg", "back": "tee-11-back.jpg" } },
+    { "id": "tee-17-pch", "name": "PCH Tee", "number": "17", "collection": "club-paradise", "club": null, "price": 40, "status": "first-drop", "images": { "front": "tee-17-front.jpg", "back": "tee-17-back.jpg" } },
+    { "id": "tee-26-leisure-club", "name": "Leisure Club Tee", "number": "26", "collection": "club-paradise", "club": "leisure-club", "price": 40, "status": "first-drop", "images": { "front": "tee-26-front.jpg", "back": "tee-26-back.jpg" } },
+    { "id": "hoodie", "name": "Hoodie", "collection": "club-paradise", "price": null, "status": "later-drop", "note": "Coming in a later drop", "images": { "front": "hoodie-front.jpg", "back": "hoodie-back.jpg" } }
+  ],
+  "clubs": [
+    { "id": "social-club", "name": "Social Club", "motto": "Surf · Sun · Social.", "ink": "terracotta", "card": "cream", "product": null },
+    { "id": "leisure-club", "name": "Leisure Club", "motto": "Sun · Salt · Naps.", "ink": "forest", "card": "sand", "product": "tee-26-leisure-club" },
+    { "id": "sunset-club", "name": "Sunset Club", "motto": "Stay for sunset.", "ink": "terracotta", "card": "sand", "product": null },
+    { "id": "siesta-club", "name": "Siesta Club", "motto": "Nap often.", "ink": "forest", "card": "cream", "product": null },
+    { "id": "cove-lounge", "name": "Cove Lounge", "motto": "Open sunrise to sunset.", "ink": "terracotta", "card": "cream", "product": null },
+    { "id": "yacht-club", "name": "Yacht Club", "motto": "Smooth sailing.", "ink": "forest", "card": "sand", "product": "tee-11-yacht-club" },
+    { "id": "swim-club", "name": "Swim Club", "motto": "Leave no towel.", "ink": "terracotta", "card": "sand", "product": null },
+    { "id": "open-water-society", "name": "Open Water Society", "motto": "Early tide. Late sunsets.", "ink": "forest", "card": "cream", "product": null }
+  ]
+}
