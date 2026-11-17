@@ -2,13 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Waterline from "./Waterline";
 import SignupForm from "./SignupForm";
+import { GROUNDSWELL } from "./waves";
 import { SITE } from "@/lib/site";
 
 /** Deep water: full navy, cream logo, where to find us, signup, coordinates in fine print. */
 export default function Footer() {
   return (
     <footer className="relative mt-16 bg-navy text-cream" id="signup">
-      <div className="absolute inset-x-0 bottom-full"><Waterline color="#1C2B4A" height={56} amp={14} duration={18} /></div>
+      <div className="absolute inset-x-0 bottom-full"><Waterline color="#1C2B4A" height={72} comps={GROUNDSWELL} scale={0.9} duration={24} /></div>
       <div className="wrap grid gap-12 pb-10 pt-12 md:grid-cols-[1.1fr_1fr] md:gap-16 md:pt-16">
         <div className="grid content-start gap-6">
           <Image src="/assets/logos/wave-cream.png" alt="Paradise Cove" width={1173} height={748} className="logo-fade w-[min(340px,78%)] h-auto" />

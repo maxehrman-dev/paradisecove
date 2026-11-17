@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Waterline from "../Waterline";
 import Slot from "../Slot";
+import { SWELL, CHOP } from "../waves";
 
 /** 1. Shore: paper, wave logo, Sun · Salt · Surf, one lifestyle slot, a rolling waterline along the bottom. */
 export default function Shore() {
@@ -15,8 +16,8 @@ export default function Shore() {
         </div>
         <Slot file="lifestyle-shore.jpg" label="Lifestyle photo · the shore" className="aspect-[4/5] w-full max-md:max-h-[60svh]" />
       </div>
-      <Waterline line color="#1C2B4A" height={36} amp={9} period={240} duration={14} />
-      <Waterline line color="#1C2B4A" height={26} amp={6} period={300} duration={22} reverse className="-mt-5 opacity-40" />
+      <Waterline line color="#1C2B4A" height={44} comps={SWELL} scale={0.9} duration={18} />
+      <Waterline line color="#1C2B4A" height={30} comps={CHOP} scale={0.7} duration={26} reverse className="-mt-6 opacity-35" />
     </section>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { crestPath } from "../waves";
+import { seaFill, seaLine, LACE, CHOP } from "../waves";
 
 const SIZES = [
   { size: "XS", name: "Ankle Biter", y: 238 },
@@ -17,12 +17,13 @@ export default function SizeBySwell() {
   const [i, setI] = useState(2);
   const reduce = useReducedMotion();
   const s = SIZES[i];
-  const wave = crestPath(720, 320, 14, 12, 120);
+  const wave = seaFill(720, 340, 18, CHOP, 1.15);
+  const lace = seaLine(720, 25, CHOP, 1.15);
   return (
     <section aria-labelledby="swell" className="bg-cream py-16 md:py-24">
       <div className="wrap grid items-center gap-10 md:grid-cols-[1fr_1.1fr] md:gap-16">
         <div className="grid gap-5">
-          <span className="pc-label text-rose">Every piece</span>
+          <span className="pc-label text-navy/60">Every piece</span>
           <h2 id="swell" className="pc-head text-[clamp(38px,6vw,64px)]">Sized by swell</h2>
           <p className="max-w-[36ch] text-navy/80">Every size is named for a wave height. Yours is circled on the neck label.</p>
           <div role="radiogroup" aria-label="Size" className="grid grid-cols-5 gap-2">
@@ -44,8 +45,9 @@ export default function SizeBySwell() {
                 <text x="10" y={m.y - 6} fill="#1C2B4A" fillOpacity=".55" style={{ font: "800 9px var(--font-montserrat)", letterSpacing: ".2em", textTransform: "uppercase" }}>{m.t.toUpperCase()}</text>
               </g>
             ))}
-            <motion.g initial={false} animate={{ y: s.y - 14 }} transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 70, damping: 14 }}>
+            <motion.g initial={false} animate={{ y: s.y - 18 }} transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 70, damping: 14 }}>
               <path d={wave} fill="#1C2B4A" transform="translate(-180 0)" />
+              <path d={lace} fill="none" stroke="#F4F0E4" strokeWidth={1.5} strokeDasharray={LACE} strokeLinecap="round" transform="translate(-180 0)" />
             </motion.g>
           </svg>
         </div>

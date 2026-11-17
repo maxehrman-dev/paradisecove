@@ -9,15 +9,12 @@ export default {
         navy: "#1C2B4A",
         cream: "#F4F0E4",
         paper: "#FBFAF6",
-        // Paradise Cove accents
+        // Paradise Cove: one accent
         coral: "#E8A0B4",
-        rose: "#B8606E",
-        // Club Paradise inks
-        terracotta: "#A83434",
-        forest: "#2C5C3E",
-        gold: "#D49E30",
-        peach: "#E8A47C",
-        sand: "#D9CDB4",
+        // Club Paradise: one accent (awnings are rust and cream only)
+        rust: "#C2603A",
+        // Tiny details only. Never a large area, never next to rust.
+        kelp: "#1F5E3B",
       },
       fontFamily: {
         cove: ["var(--font-grandstander)", "Arial Rounded MT Bold", "sans-serif"],

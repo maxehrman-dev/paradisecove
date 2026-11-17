@@ -21,12 +21,12 @@ export default function SignupForm({ tone = "dark" }: { tone?: "dark" | "light" 
 
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-3">
-      <label htmlFor={`email-${tone}`} className={`pc-label ${dark ? "text-coral" : "text-rose"}`}>First drop email</label>
+      <label htmlFor={`email-${tone}`} className={`pc-label ${dark ? "text-coral" : "text-navy/60"}`}>First drop email</label>
       <div className="flex flex-wrap gap-2">
         <input id={`email-${tone}`} name="email" type="email" autoComplete="email" required placeholder="you@email.com" disabled={state === "done"}
           className={`min-h-[48px] min-w-0 flex-1 basis-56 rounded-full border px-5 font-label text-base outline-none ${dark ? "border-cream/40 bg-transparent text-cream placeholder:text-cream/50 focus:border-coral" : "border-navy/30 bg-paper text-navy placeholder:text-navy/40 focus:border-navy"}`} />
         <button type="submit" disabled={state === "sending" || state === "done"}
-          className={`min-h-[48px] rounded-full px-6 pc-label transition-colors disabled:opacity-60 ${dark ? "bg-coral text-navy hover:bg-cream" : "bg-navy text-cream hover:bg-rose"}`}>
+          className={`min-h-[48px] rounded-full px-6 pc-label transition-colors disabled:opacity-60 ${dark ? "bg-coral text-navy hover:bg-cream" : "bg-navy text-cream hover:bg-coral hover:text-navy"}`}>
           {state === "sending" ? "Sending" : state === "done" ? "Done" : "Notify me"}
         </button>
       </div>

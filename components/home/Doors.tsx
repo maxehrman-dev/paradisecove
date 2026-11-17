@@ -35,17 +35,17 @@ export default function Doors({ locked }: { locked: boolean }) {
         </div>
       </DoorShell>
       {/* Club Paradise: the clubhouse door, under a striped awning */}
-      <DoorShell href="/club-paradise" locked={locked} label="Club Paradise, men's" className="bg-forest text-cream">
+      <DoorShell href="/club-paradise" locked={locked} label="Club Paradise, men's" className="bg-navy text-cream">
         <svg className="absolute inset-x-0 top-0 h-10 w-full md:h-14" viewBox="0 0 400 56" preserveAspectRatio="none" aria-hidden="true">
-          {Array.from({ length: 10 }, (_, i) => <rect key={i} x={i * 40} y="0" width="40" height="40" fill={i % 2 ? "#F4F0E4" : "#A83434"} />)}
-          {Array.from({ length: 10 }, (_, i) => <path key={`s${i}`} d={`M${i * 40} 40 a20 16 0 0 0 40 0 Z`} fill={i % 2 ? "#F4F0E4" : "#A83434"} />)}
+          {Array.from({ length: 10 }, (_, i) => <rect key={i} x={i * 40} y="0" width="40" height="40" fill={i % 2 ? "#F4F0E4" : "#C2603A"} />)}
+          {Array.from({ length: 10 }, (_, i) => <path key={`s${i}`} d={`M${i * 40} 40 a20 16 0 0 0 40 0 Z`} fill={i % 2 ? "#F4F0E4" : "#C2603A"} />)}
         </svg>
-        <span className="absolute right-[12%] top-1/2 h-4 w-4 rounded-full bg-gold md:h-5 md:w-5" aria-hidden="true" />
+        <span className="absolute right-[12%] top-1/2 h-4 w-4 rounded-full bg-rust md:h-5 md:w-5" aria-hidden="true" />
         <div className="flex h-full w-full flex-col items-center justify-between px-6 pb-5 pt-14 md:pb-8 md:pt-24">
-          <span className="cp-fine text-[10px] text-sand">Men's · The clubhouse</span>
+          <span className="cp-fine text-[10px] text-cream/70">Men's · The clubhouse</span>
           <div className="grid justify-items-center gap-3">
             <span className="cp-head text-[clamp(34px,6.4vw,76px)]">Club<br />Paradise</span>
-            <span className="cp-club text-[11px] text-gold sm:text-xs">Members since forever</span>
+            <span className="cp-club text-[11px] text-cream/80 sm:text-xs">Members since forever</span>
           </div>
           <span className="cp-fine inline-flex items-center gap-2 text-[11px]">
             {locked ? <><Lock /> Opens with the first drop</> : <>Members, come in <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span></>}

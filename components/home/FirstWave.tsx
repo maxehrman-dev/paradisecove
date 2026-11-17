@@ -2,18 +2,20 @@
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import Doors from "./Doors";
-import { crestPath } from "../waves";
+import { seaFill, seaLine, LACE, SWELL, CHOP, GROUNDSWELL, type Comp } from "../waves";
 
-/** One flat wave layer: crest on top, solid body, trailing crest underneath. */
-function WaveLayer({ progress, color, from, to, end = 0.72, amp = 22, period = 320 }: { progress: MotionValue<number>; color: string; from: number; to: number; end?: number; amp?: number; period?: number }) {
+/** One flat wave layer: a realistic crest on top (with foam lace), solid body, trailing swell underneath. */
+function WaveLayer({ progress, color, foam, from, to, end = 0.72, comps, scale = 1.6 }: { progress: MotionValue<number>; color: string; foam?: string; from: number; to: number; end?: number; comps: Comp[]; scale?: number }) {
   const y = useTransform(progress, [0.02, end], [`${from}svh`, `${to}svh`]);
-  const top = crestPath(1440, 60, amp + 4, amp, period);
-  const bottom = crestPath(1440, 60, amp + 4, amp, period * 1.3);
+  const H = 110, base = 64;
   return (
-    <motion.div style={{ y }} className="absolute inset-x-0 top-0 will-change-transform" aria-hidden="true">
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="block h-[60px] w-full"><path d={top} fill={color} /></svg>
+    <motion.div style={{ y }} className="absolute inset-x-0 top-0 overflow-hidden will-change-transform" aria-hidden="true">
+      <svg viewBox={`0 0 1440 ${H}`} preserveAspectRatio="none" className="-mb-px block h-[110px] w-full max-md:-ml-[90%] max-md:w-[280%]">
+        <path d={seaFill(1440, H, base, comps, scale)} fill={color} />
+        {foam && <path d={seaLine(1440, base + 7, comps, scale)} fill="none" stroke={foam} strokeWidth={2} strokeDasharray={LACE} strokeLinecap="round" vectorEffect="non-scaling-stroke" />}
+      </svg>
       <div className="h-[110svh]" style={{ background: color }} />
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="block h-[60px] w-full rotate-180"><path d={bottom} fill={color} /></svg>
+      <svg viewBox={`0 0 1440 ${H}`} preserveAspectRatio="none" className="-mt-px block h-[110px] w-full rotate-180 max-md:-ml-[90%] max-md:w-[280%]"><path d={seaFill(1440, H, base, comps, scale * 0.7)} fill={color} /></svg>
     </motion.div>
   );
 }
@@ -44,9 +46,9 @@ export default function FirstWave({ locked }: { locked: boolean }) {
           <Doors locked={locked} />
         </motion.div>
         {/* Three flat layers at three speeds: depth without gradients */}
-        <WaveLayer progress={scrollYProgress} color="#F4F0E4" from={100} to={-190} end={0.62} amp={18} period={360} />
-        <WaveLayer progress={scrollYProgress} color="#1C2B4A" from={112} to={-178} end={0.66} amp={24} period={300} />
-        <WaveLayer progress={scrollYProgress} color="#F4F0E4" from={124} to={-168} end={0.7} amp={14} period={420} />
+        <WaveLayer progress={scrollYProgress} color="#F4F0E4" from={100} to={-190} end={0.62} comps={GROUNDSWELL} scale={1.25} />
+        <WaveLayer progress={scrollYProgress} color="#1C2B4A" foam="#F4F0E4" from={112} to={-178} end={0.66} comps={SWELL} scale={1.6} />
+        <WaveLayer progress={scrollYProgress} color="#F4F0E4" from={124} to={-168} end={0.7} comps={CHOP} scale={1.4} />
       </div>
     </section>
   );

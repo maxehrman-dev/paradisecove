@@ -33,13 +33,13 @@
     { "id": "hoodie", "name": "Hoodie", "collection": "club-paradise", "price": null, "status": "later-drop", "note": "Coming in a later drop", "images": { "front": "hoodie-front.jpg", "back": "hoodie-back.jpg" } }
   ],
   "clubs": [
-    { "id": "social-club", "name": "Social Club", "motto": "Surf · Sun · Social.", "ink": "terracotta", "card": "cream", "product": null },
-    { "id": "leisure-club", "name": "Leisure Club", "motto": "Sun · Salt · Naps.", "ink": "forest", "card": "sand", "product": "tee-26-leisure-club" },
-    { "id": "sunset-club", "name": "Sunset Club", "motto": "Stay for sunset.", "ink": "terracotta", "card": "sand", "product": null },
-    { "id": "siesta-club", "name": "Siesta Club", "motto": "Nap often.", "ink": "forest", "card": "cream", "product": null },
-    { "id": "cove-lounge", "name": "Cove Lounge", "motto": "Open sunrise to sunset.", "ink": "terracotta", "card": "cream", "product": null },
-    { "id": "yacht-club", "name": "Yacht Club", "motto": "Smooth sailing.", "ink": "forest", "card": "sand", "product": "tee-11-yacht-club" },
-    { "id": "swim-club", "name": "Swim Club", "motto": "Leave no towel.", "ink": "terracotta", "card": "sand", "product": null },
-    { "id": "open-water-society", "name": "Open Water Society", "motto": "Early tide. Late sunsets.", "ink": "forest", "card": "cream", "product": null }
+    { "id": "social-club", "name": "Social Club", "motto": "Surf · Sun · Social.", "ink": "rust", "card": "cream", "product": null },
+    { "id": "leisure-club", "name": "Leisure Club", "motto": "Sun · Salt · Naps.", "ink": "rust", "card": "paper", "product": "tee-26-leisure-club" },
+    { "id": "sunset-club", "name": "Sunset Club", "motto": "Stay for sunset.", "ink": "rust", "card": "paper", "product": null },
+    { "id": "siesta-club", "name": "Siesta Club", "motto": "Nap often.", "ink": "rust", "card": "cream", "product": null },
+    { "id": "cove-lounge", "name": "Cove Lounge", "motto": "Open sunrise to sunset.", "ink": "rust", "card": "cream", "product": null },
+    { "id": "yacht-club", "name": "Yacht Club", "motto": "Smooth sailing.", "ink": "rust", "card": "paper", "product": "tee-11-yacht-club" },
+    { "id": "swim-club", "name": "Swim Club", "motto": "Leave no towel.", "ink": "rust", "card": "paper", "product": null },
+    { "id": "open-water-society", "name": "Open Water Society", "motto": "Early tide. Late sunsets.", "ink": "rust", "card": "cream", "product": null }
   ]
 }

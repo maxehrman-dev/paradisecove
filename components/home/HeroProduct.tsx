@@ -8,7 +8,7 @@ export default function HeroProduct() {
   return (
     <section aria-labelledby="hero-product" className="bg-paper py-16 md:py-24">
       <div className="wrap grid justify-items-center gap-8 text-center">
-        <span className="pc-label text-rose">Paradise Cove · Women's</span>
+        <span className="pc-label text-navy/60">Paradise Cove · Women's</span>
         <Slot file={p.images.front} label="The off-shoulder crewneck, front" className="aspect-[4/5] w-full max-w-[520px]" />
         <div className="grid justify-items-center gap-3">
           <h2 id="hero-product" className="pc-head text-[clamp(30px,5vw,52px)]">{p.name}</h2>
