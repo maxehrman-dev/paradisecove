@@ -15,6 +15,8 @@ export default {
         rust: "#C2603A",
         // Tiny details only. Never a large area, never next to rust.
         kelp: "#1F5E3B",
+        // The light studio grey behind the product mockups, so photos sit flush.
+        studio: "#E8E7E3",
       },
       fontFamily: {
         cove: ["var(--font-grandstander)", "Arial Rounded MT Bold", "sans-serif"],

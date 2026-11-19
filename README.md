@@ -16,10 +16,7 @@ Everything lives in `data/catalog.json`: collections, products (crewneck $65, te
 ## Assets
 `public/assets/logos` holds the brand logo files exactly as supplied (script, stacked, wave in navy and cream, the navy CA 1 shield). Never redraw, recolor or stretch them.
 `public/assets/labels` holds the neck label photos (not used yet: they say "Malibu").
-Missing photos render as dashed placeholder slots that name the file they expect. Drop real photos into `public/assets/photos/` with these names and swap the slot for an image:
-- `lifestyle-shore.jpg` (home, shore)
-- `crewneck-front.jpg`, `crewneck-back.jpg`, embroidery details (see catalog)
-- `tee-XX-front.jpg` / `tee-XX-back.jpg` for each tee
+The `Slot` component renders a dashed, clearly named placeholder for any photo that doesn't exist yet.
 
 ## Email signup
 `POST /api/signup` forwards to `SIGNUP_WEBHOOK_URL` when set. Without it, the form tells visitors signups open soon.
@@ -31,4 +28,4 @@ Only three wave moves: the looping waterline, the wave wipe between sections, th
 Paste real post links from @paradisecovesurf into `data/instagram.json` → `posts` (e.g. `"https://www.instagram.com/p/ABC123/"`). They render with Instagram's official embed on the home page and Find us (first 3). With no links it shows a follow block, never fake posts.
 
 ## Product images
-`public/assets/products` holds the tee and hoodie mockups from the Canva lineup (about 420px). Swap in full-resolution exports with the same file names when you have them.
+`public/assets/products` holds full-size exports of the Canva mockups: every tee front and back (PCSC Approved Lineup + PCSC Final 8), the off-shoulder crewneck front and back with three real close-up crops, and the hoodie front and back. `public/assets/photos` holds the two lifestyle photos from the brand deck. Replace any file with a real photo shoot later, keeping the file name.

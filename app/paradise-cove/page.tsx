@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Slot from "@/components/Slot";
 import Reveal from "@/components/Reveal";
 import Waterline from "@/components/Waterline";
 import SizeBySwell from "@/components/home/SizeBySwell";
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ParadiseCovePage() {
   const p = productById("off-shoulder-crewneck")!;
-  const slots = p.slots!;
+  const img = p.images as { front: string; back: string };
   return (
     <div className="bg-paper text-navy">
       {/* Quiet opening */}
@@ -36,8 +35,8 @@ export default function ParadiseCovePage() {
       <section aria-labelledby="crewneck" className="py-20 md:py-32">
         <div className="wrap grid gap-14 lg:grid-cols-[1.4fr_1fr] lg:items-start lg:gap-20">
           <div className="grid gap-4 sm:grid-cols-2">
-            <Reveal slow><Slot file={slots.front} label="Off-shoulder crewneck · front" tone="cream" className="aspect-[4/5] w-full" /></Reveal>
-            <Reveal slow delay={0.15}><Slot file={slots.back} label="Off-shoulder crewneck · back" tone="cream" className="aspect-[4/5] w-full" /></Reveal>
+            <Reveal slow><figure className="grid gap-2"><div className="relative aspect-[4/5] overflow-hidden bg-studio"><Image src={img.front} alt="Off-shoulder crewneck, front" fill sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw" className="object-cover" /></div><figcaption className="pc-label text-[10px] text-navy/60">Front</figcaption></figure></Reveal>
+            <Reveal slow delay={0.15}><figure className="grid gap-2"><div className="relative aspect-[4/5] overflow-hidden bg-studio"><Image src={img.back} alt="Off-shoulder crewneck, back" fill sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw" className="object-cover" /></div><figcaption className="pc-label text-[10px] text-navy/60">Back</figcaption></figure></Reveal>
           </div>
           <Reveal slow delay={0.1} className="grid content-start gap-6 lg:sticky lg:top-40">
             <span className="pc-label text-navy/60">The hero piece</span>
@@ -60,8 +59,13 @@ export default function ParadiseCovePage() {
             <h2 id="details" className="pc-head text-[clamp(30px,4.4vw,48px)]">Pink thread, by hand</h2>
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-3">
-            {slots.details.map(([file, label], i) => (
-              <Reveal slow delay={i * 0.12} key={file}><Slot file={file} label={label} tone="paper" className="aspect-square w-full" /></Reveal>
+            {(p.closeups as string[][]).map(([src, label], i) => (
+              <Reveal slow delay={i * 0.12} key={src}>
+                <figure className="grid gap-3">
+                  <div className="relative aspect-square overflow-hidden bg-studio"><Image src={src} alt={label} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover" /></div>
+                  <figcaption className="text-sm text-navy/80">{label}</figcaption>
+                </figure>
+              </Reveal>
             ))}
           </div>
         </div>

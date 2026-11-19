@@ -22,33 +22,30 @@
       "status": "first-drop",
       "line": "Pink thread on cream cotton. Made for long beach days.",
       "images": {
-        "front": null,
-        "back": null
-      },
-      "slots": {
-        "front": "crewneck-front.jpg",
-        "back": "crewneck-back.jpg",
-        "details": [
-          [
-            "crewneck-embroidery-turtle.jpg",
-            "Turtle on the chest"
-          ],
-          [
-            "crewneck-embroidery-palm-cuff.jpg",
-            "Palm on the cuff"
-          ],
-          [
-            "crewneck-embroidery-back.jpg",
-            "Paradise Cove on the back"
-          ]
-        ]
+        "front": "/assets/products/crewneck-front.jpg",
+        "back": "/assets/products/crewneck-back.jpg"
       },
       "details": [
         "Pink thread embroidery",
         "Script and turtle on the chest",
+        "Pink piping down both sleeves",
         "Palm on the cuff",
-        "Paradise Cove on the back",
+        "Paradise Cove and the wave on the back",
         "100% cotton. Everything embroidered."
+      ],
+      "closeups": [
+        [
+          "/assets/products/crewneck-detail-chest.jpg",
+          "Script and turtle on the chest"
+        ],
+        [
+          "/assets/products/crewneck-detail-cuff.jpg",
+          "Palm on the cuff"
+        ],
+        [
+          "/assets/products/crewneck-detail-back.jpg",
+          "Paradise Cove and the wave on the back"
+        ]
       ]
     },
     {
@@ -61,7 +58,7 @@
       "status": "first-drop",
       "images": {
         "back": "/assets/products/tee-01-back.jpg",
-        "front": "/assets/products/tee-front.jpg"
+        "front": "/assets/products/tee-01-front.jpg"
       },
       "line": "Coconuts, palms and a La Jolla print. Sun · Salt · Surf."
     },
@@ -75,7 +72,7 @@
       "status": "first-drop",
       "images": {
         "back": "/assets/products/tee-03-back.jpg",
-        "front": "/assets/products/tee-front.jpg"
+        "front": "/assets/products/tee-03-front.jpg"
       },
       "line": "The Torrey pine on the bluff. Wind · Salt · Surf."
     },
@@ -89,7 +86,7 @@
       "status": "first-drop",
       "images": {
         "back": "/assets/products/tee-05-back.jpg",
-        "front": "/assets/products/tee-front.jpg"
+        "front": "/assets/products/tee-05-front.jpg"
       },
       "line": "A lemon cluster, fresh from the coast."
     },
@@ -103,7 +100,7 @@
       "status": "first-drop",
       "images": {
         "back": "/assets/products/tee-06-back.jpg",
-        "front": "/assets/products/tee-front.jpg"
+        "front": "/assets/products/tee-06-front.jpg"
       },
       "line": "Saddle up, paddle out."
     },
@@ -117,7 +114,7 @@
       "status": "first-drop",
       "images": {
         "back": "/assets/products/tee-11-back.jpg",
-        "front": "/assets/products/tee-front.jpg"
+        "front": "/assets/products/tee-11-front.jpg"
       },
       "line": "A ship wheel on the back. Smooth sailing."
     },
@@ -131,7 +128,7 @@
       "status": "first-drop",
       "images": {
         "back": "/assets/products/tee-17-back.jpg",
-        "front": "/assets/products/tee-front.jpg"
+        "front": "/assets/products/tee-17-front.jpg"
       },
       "line": "A convertible on the coast road. Take the long way."
     },
@@ -145,7 +142,7 @@
       "status": "first-drop",
       "images": {
         "back": "/assets/products/tee-26-back.jpg",
-        "front": "/assets/products/tee-front.jpg"
+        "front": "/assets/products/tee-26-front.jpg"
       },
       "line": "Rust ink. Open sunrise to sunset."
     },
