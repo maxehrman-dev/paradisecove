@@ -5,12 +5,13 @@ import Riviera from "@/components/home/Riviera";
 import SizeBySwell from "@/components/home/SizeBySwell";
 import Story from "@/components/home/Story";
 import ComingSoon from "@/components/home/ComingSoon";
+import InstagramFeed from "@/components/InstagramFeed";
 import { LAUNCHED } from "@/lib/site";
 
 /** Home: a walk from the sand into the water. Starts on paper, ends in navy (the footer). */
 export default function Home() {
   if (!LAUNCHED) {
-    return (<><Shore /><FirstWave locked /><ComingSoon /></>);
+    return (<><Shore /><FirstWave locked /><ComingSoon /><InstagramFeed tone="cream" /></>);
   }
-  return (<><Shore /><FirstWave locked={false} /><HeroProduct /><Riviera /><SizeBySwell /><Story /></>);
+  return (<><Shore /><FirstWave locked={false} /><HeroProduct /><Riviera /><SizeBySwell /><InstagramFeed /><Story /></>);
 }

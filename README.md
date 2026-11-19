@@ -26,3 +26,9 @@ Missing photos render as dashed placeholder slots that name the file they expect
 
 ## Motion rules
 Only three wave moves: the looping waterline, the wave wipe between sections, the Size by Swell wave. Logos only fade in. Transform and opacity only. `prefers-reduced-motion` turns all of it off.
+
+## Instagram
+Paste real post links from @paradisecovesurf into `data/instagram.json` → `posts` (e.g. `"https://www.instagram.com/p/ABC123/"`). They render with Instagram's official embed on the home page and Find us (first 3). With no links it shows a follow block, never fake posts.
+
+## Product images
+`public/assets/products` holds the tee and hoodie mockups from the Canva lineup (about 420px). Swap in full-resolution exports with the same file names when you have them.

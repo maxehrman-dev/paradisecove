@@ -37,3 +37,11 @@
   .logo-fade, .waterline { animation: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* Membership cards flip on hover where hover exists; taps toggle everywhere. */
+@media (hover: hover) {
+  .flip:hover .flip-inner { transform: rotateY(180deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner { transition: none !important; }
+}
