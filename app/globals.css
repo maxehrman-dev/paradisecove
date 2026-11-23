@@ -19,9 +19,21 @@
   .cp-club { @apply font-caslon uppercase; font-weight: 700; letter-spacing: .22em; }
   .cp-quote { @apply font-caslon italic; font-weight: 400; }
   .cp-fine { @apply font-club uppercase; font-weight: 600; letter-spacing: .26em; font-size: 11px; }
-  .wrap { @apply mx-auto w-full max-w-site px-4 sm:px-6; }
+  .wrap { @apply mx-auto w-full max-w-site px-5 sm:px-8; }
+  /* Text that sits beside a full-bleed photo lines up with .wrap's edge. */
+  .edge-l { padding-left: max(1.25rem, calc((100vw - 1240px) / 2 + 2rem)); padding-right: 1.25rem; }
+  .edge-r { padding-right: max(1.25rem, calc((100vw - 1240px) / 2 + 2rem)); padding-left: 1.25rem; }
+  @media (min-width: 768px) { .edge-l { padding-right: clamp(2rem, 5vw, 5rem); } .edge-r { padding-left: clamp(2rem, 5vw, 5rem); } }
+  /* Buttons: square, quiet, one weight. */
+  .btn { @apply inline-flex min-h-[52px] items-center justify-center gap-3 px-8 font-label uppercase transition-colors duration-300; font-weight: 800; font-size: 10.5px; letter-spacing: .3em; }
+  .btn-solid { @apply btn bg-navy text-paper hover:bg-coral hover:text-navy; }
+  .btn-line { @apply btn border border-navy text-navy hover:bg-navy hover:text-paper; }
+  .btn-cream { @apply btn bg-paper text-navy hover:bg-coral; }
+  .link-line { @apply inline-flex w-fit items-center gap-3 border-b border-current pb-2 pt-4 font-label uppercase transition-[gap] duration-300 hover:gap-5; font-weight: 800; font-size: 10.5px; letter-spacing: .3em; }
+  .eyebrow { @apply font-label uppercase text-navy/55; font-weight: 800; letter-spacing: .34em; font-size: 10px; }
+  .rule { @apply h-px w-full bg-navy/15; }
   /* Placeholder slot for a missing photo. Never a fake image. */
-  .slot { @apply relative grid place-items-center border-2 border-dashed border-navy/30 bg-cream text-center text-navy/70; }
+  .slot { @apply relative grid place-items-center border border-dashed border-navy/30 bg-cream text-center text-navy/70; }
 }
 
 /* Logos only fade in. */

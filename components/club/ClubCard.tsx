@@ -28,7 +28,7 @@ export default function ClubCard({ club, index, product }: { club: Club; index: 
       className="flip group relative block aspect-[5/7] w-full text-left [perspective:1200px]">
       <span className={`flip-inner absolute inset-0 transition-transform duration-700 [transform-style:preserve-3d] ${flipped ? "[transform:rotateY(180deg)]" : ""}`}>
         {/* Front: the card */}
-        <span className={`absolute inset-0 grid grid-rows-[auto_1fr_auto] rounded-[8px] border-[3px] border-rust p-4 text-navy [backface-visibility:hidden] sm:p-5 ${bg}`}>
+        <span className={`absolute inset-0 grid grid-rows-[auto_1fr_auto] rounded-[4px] border-[1.5px] border-rust p-4 text-navy [backface-visibility:hidden] sm:p-5 ${bg}`}>
           <span className="flex items-center justify-between cp-fine text-[9px] text-navy/70"><span>Member</span><span>No. {no}</span></span>
           <span className="grid content-center gap-2 py-3">
             <span className="cp-head block text-[clamp(24px,3.2vw,36px)] text-rust">{club.name}</span>
@@ -42,11 +42,11 @@ export default function ClubCard({ club, index, product }: { club: Club; index: 
               </span>
               <Seal />
             </span>
-            <span className="border-t-2 border-rust pt-2 cp-fine text-[8px] text-navy/70">Members since forever</span>
+            <span className="border-t border-rust pt-2 cp-fine text-[8px] text-navy/70">Members since forever</span>
           </span>
         </span>
         {/* Back: the piece */}
-        <span className="absolute inset-0 grid grid-rows-[1fr_auto] overflow-hidden rounded-[8px] border-[3px] border-rust bg-paper text-navy [backface-visibility:hidden] [transform:rotateY(180deg)]">
+        <span className="absolute inset-0 grid grid-rows-[1fr_auto] overflow-hidden rounded-[4px] border-[1.5px] border-rust bg-paper text-navy [backface-visibility:hidden] [transform:rotateY(180deg)]">
           {img ? (
             <span className="relative block"><Image src={img} alt={`${product!.name}, back print`} fill sizes="(min-width: 1024px) 22vw, 45vw" className="object-cover" /></span>
           ) : (
@@ -55,7 +55,7 @@ export default function ClubCard({ club, index, product }: { club: Club; index: 
               <span className="cp-quote text-lg">Pieces for this room are coming in a later drop.</span>
             </span>
           )}
-          <span className="grid gap-1 border-t-2 border-rust bg-cream p-3">
+          <span className="grid gap-1 border-t border-rust bg-cream p-3">
             <span className="flex justify-between gap-2 font-club text-[12px] font-extrabold uppercase tracking-[.06em] [font-stretch:112%]">
               <span>{product ? product.name : club.name}</span><span className="tabular-nums">{product?.price ? `$${product.price}` : ""}</span>
             </span>

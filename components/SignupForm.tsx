@@ -21,13 +21,13 @@ export default function SignupForm({ tone = "dark" }: { tone?: "dark" | "light" 
 
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-3">
-      <label htmlFor={`email-${tone}`} className={`pc-label ${dark ? "text-coral" : "text-navy/60"}`}>First drop email</label>
-      <div className="flex flex-wrap gap-2">
+      <label htmlFor={`email-${tone}`} className={`pc-label text-[10px] tracking-[.34em] ${dark ? "text-cream/60" : "text-navy/55"}`}>First drop email</label>
+      <div className={`flex items-stretch border-b ${dark ? "border-cream/50 focus-within:border-coral" : "border-navy focus-within:border-navy"}`}>
         <input id={`email-${tone}`} name="email" type="email" autoComplete="email" required placeholder="you@email.com" disabled={state === "done"}
-          className={`min-h-[48px] min-w-0 flex-1 basis-56 rounded-full border px-5 font-label text-base outline-none ${dark ? "border-cream/40 bg-transparent text-cream placeholder:text-cream/50 focus:border-coral" : "border-navy/30 bg-paper text-navy placeholder:text-navy/40 focus:border-navy"}`} />
+          className={`min-h-[52px] min-w-0 flex-1 bg-transparent font-label text-base outline-none focus-visible:outline-none ${dark ? "text-cream placeholder:text-cream/40" : "text-navy placeholder:text-navy/40"}`} />
         <button type="submit" disabled={state === "sending" || state === "done"}
-          className={`min-h-[48px] rounded-full px-6 pc-label transition-colors disabled:opacity-60 ${dark ? "bg-coral text-navy hover:bg-cream" : "bg-navy text-cream hover:bg-coral hover:text-navy"}`}>
-          {state === "sending" ? "Sending" : state === "done" ? "Done" : "Notify me"}
+          className={`min-h-[52px] shrink-0 pl-4 pc-label text-[10.5px] tracking-[.3em] transition-colors disabled:opacity-60 ${dark ? "text-coral hover:text-cream" : "text-navy hover:text-coral"}`}>
+          {state === "sending" ? "Sending" : state === "done" ? "Done" : <>Notify me <span aria-hidden="true">→</span></>}
         </button>
       </div>
       <p role="status" aria-live="polite" className={`min-h-[1.5em] text-sm ${dark ? "text-cream/80" : "text-navy/80"}`}>{msg}</p>

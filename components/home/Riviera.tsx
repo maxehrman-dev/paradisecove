@@ -17,13 +17,13 @@ export function Awning({ className = "" }: { className?: string }) {
 export function MemberCard({ i, name, motto, ink, card }: { i: number; name: string; motto: string; ink: string; card: string }) {
   const color = INK[ink as keyof typeof INK] ?? INK.rust, bg = CARD[card as keyof typeof CARD] ?? CARD.cream;
   return (
-    <article className="grid h-[300px] w-[240px] shrink-0 content-between rounded-[6px] border-[3px] p-5 text-navy sm:h-[330px] sm:w-[260px]" style={{ background: bg, borderColor: color }}>
+    <article className="grid h-[300px] w-[240px] shrink-0 content-between rounded-[3px] border-[1.5px] p-5 text-navy sm:h-[330px] sm:w-[260px]" style={{ background: bg, borderColor: color }}>
       <div className="flex items-center justify-between cp-fine text-[10px] text-navy/70"><span>Member</span><span>No. {String(i + 1).padStart(2, "0")}</span></div>
       <div className="grid gap-3">
         <h3 className="cp-head text-[34px] sm:text-[38px]" style={{ color }}>{name}</h3>
         <p className="cp-quote text-lg leading-snug">{motto}</p>
       </div>
-      <div className="flex items-end justify-between border-t-2 pt-3 cp-fine text-[9px] text-navy/70" style={{ borderColor: color }}>
+      <div className="flex items-end justify-between border-t pt-3 cp-fine text-[9px] text-navy/70" style={{ borderColor: color }}>
         <span>Members since forever</span><span>La Jolla</span>
       </div>
     </article>
@@ -49,11 +49,11 @@ export default function Riviera() {
       <Awning className="relative" />
       <div className="relative py-14 md:py-20">
         <div className="wrap">
-          <div className="mx-auto grid max-w-[680px] justify-items-center gap-3 border-[3px] border-rust bg-cream px-6 py-7 text-center">
+          <div className="mx-auto grid max-w-[640px] justify-items-center gap-4 bg-cream p-2"><div className="grid w-full justify-items-center gap-4 border border-rust px-6 py-9 text-center md:py-11">
             <span className="cp-fine text-navy/70">Club Paradise · Men's</span>
             <h2 id="riviera" className="cp-head text-[clamp(34px,6vw,64px)] text-rust">The Clubhouse</h2>
             <p className="cp-quote text-xl text-navy">Surf · Siesta · Sunset</p>
-          </div>
+          </div></div>
         </div>
         <div className="mt-10 md:mt-14">
           <motion.div style={reduce ? undefined : { x }} className={`flex gap-4 px-4 will-change-transform sm:gap-6 ${reduce ? "overflow-x-auto pb-4" : ""}`}>
