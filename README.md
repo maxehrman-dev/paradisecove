@@ -28,7 +28,25 @@ Only three wave moves: the looping waterline, the wave wipe between sections, th
 Paste real post links from @paradisecovesurf into `data/instagram.json` → `posts` (e.g. `"https://www.instagram.com/p/ABC123/"`). They render with Instagram's official embed on the home page and Find us (first 3). With no links it shows a follow block, never fake posts.
 
 ## Product images
-`public/assets/products` holds full-size exports of the Canva mockups: every tee front and back (PCSC Approved Lineup + PCSC Final 8), the off-shoulder crewneck front and back with three real close-up crops, and the hoodie front and back. `public/assets/photos` holds the two lifestyle photos from the brand deck. Replace any file with a real photo shoot later, keeping the file name.
+`public/assets/products` holds full-size exports of the Canva mockups: every tee front and back (PCSC Approved Lineup + PCSC Final 8), the off-shoulder crewneck front and back with three real close-up crops, and the hoodie front and back. `public/assets/photos` holds the two lifestyle photos from the brand deck plus the stock vibe photos listed below. Replace any file with a real photo shoot later, keeping the file name.
 
-## Lifestyle photos
-`public/assets/photos`: the wake-surf and hoodie-on-the-boat photos (brand deck), plus four crops from the Paradise Cove Launch deck in Canva: `bluff-surfer.jpg`, `barrel.jpg`, `woodie.jpg`, `crewneck-beach.jpg`. Confirm you own or have a license for the Launch deck images before going live; swap any of them for your own shoot with the same file name.
+## Lifestyle and stock photos
+Product images only appear where you shop (hero crewneck, the Paradise Cove page, the Club Paradise rack, club card backs). Everything else is real stock photography for vibe, with a gentle scroll parallax (`components/ParallaxPhoto.tsx`, off under reduced motion).
+
+Brand deck: `lifestyle-wakesurf.jpg`, `lifestyle-hoodie-boat.jpg`.
+
+Stock, from Unsplash under the Unsplash License (free for commercial use, no attribution required). Source: `https://unsplash.com/photos/<id>`.
+
+| File | Unsplash id | Used on |
+| --- | --- | --- |
+| stock-shore-sunrise.jpg | 1476673160081-cf065607f449 | Home shore |
+| stock-aerial-surf.jpg | 1505142468610-359e7d316be0 | Home doors background |
+| stock-pink-sunset-surfer.jpg | 1502933691298-84fc14542831 | Paradise Cove door, Paradise Cove hero |
+| stock-barrel-surfer.jpg | 1502680390469-be75c86b636f | Club Paradise door |
+| stock-blue-wave-surfer.jpg | 1455729552865-3658a5d39692 | Club Paradise hero |
+| stock-sunset-silhouette.jpg | 1415931633537-351070d20b81 | Home photo band |
+| stock-wave-crest.jpg | 1500375592092-40eb2168fd21 | Size by Swell, Story band |
+| stock-golden-shore.jpg | 1473116763249-2faaef81ccda | Home story |
+| stock-underwater-light.jpg | 1530053969600-caed2596d242 | Footer |
+
+Swap any of them for your own shoot with the same file name.

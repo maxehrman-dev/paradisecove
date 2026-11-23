@@ -1,24 +1,24 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { seaFill, seaLine, LACE, CHOP } from "../waves";
 
+// y is the waterline height in the frame (0 = top, 1 = bottom). The photo slides so its own waterline meets it.
 const SIZES = [
-  { size: "XS", name: "Ankle Biter", y: 238 },
-  { size: "S", name: "Knee High", y: 196 },
-  { size: "M", name: "Waist High", y: 148 },
-  { size: "L", name: "Head High", y: 82 },
-  { size: "XL", name: "Overhead", y: 34 },
+  { size: "XS", name: "Ankle Biter", y: 0.85 },
+  { size: "S", name: "Knee High", y: 0.7 },
+  { size: "M", name: "Waist High", y: 0.53 },
+  { size: "L", name: "Head High", y: 0.3 },
+  { size: "XL", name: "Overhead", y: 0.13 },
 ];
-const MARKS = [{ y: 238, t: "Ankle" }, { y: 196, t: "Knee" }, { y: 148, t: "Waist" }, { y: 82, t: "Head" }, { y: 34, t: "Overhead" }];
+// Frame is 9:7. Photo is 2:3 with its waterline at 50% of its height. Offset as a % of the photo's own height.
+const offset = (y: number) => `${(0.5185 * y - 0.5) * 100}%`;
 
-/** 5. Size by Swell: tap a size and the wave rises to that height. */
+/** 5. Size by Swell: tap a size and a real wave rises to that height. */
 export default function SizeBySwell() {
   const [i, setI] = useState(2);
   const reduce = useReducedMotion();
   const s = SIZES[i];
-  const wave = seaFill(720, 340, 18, CHOP, 1.15);
-  const lace = seaLine(720, 25, CHOP, 1.15);
   return (
     <section aria-labelledby="swell" className="bg-cream py-16 md:py-24">
       <div className="wrap grid items-center gap-10 md:grid-cols-[1fr_1.1fr] md:gap-16">
@@ -37,19 +37,17 @@ export default function SizeBySwell() {
           </div>
           <p aria-live="polite" className="pc-label text-navy">{s.size} · {s.name}</p>
         </div>
-        <div className="relative overflow-hidden rounded-[6px] border-2 border-navy bg-paper">
-          <svg viewBox="0 0 360 280" className="block h-auto w-full" role="img" aria-label={`Wave at ${s.name} height`}>
-            {MARKS.map((m) => (
-              <g key={m.t}>
-                <line x1="0" x2="360" y1={m.y} y2={m.y} stroke="#1C2B4A" strokeOpacity=".15" strokeDasharray="4 6" />
-                <text x="10" y={m.y - 6} fill="#1C2B4A" fillOpacity=".55" style={{ font: "800 9px var(--font-montserrat)", letterSpacing: ".2em", textTransform: "uppercase" }}>{m.t.toUpperCase()}</text>
-              </g>
-            ))}
-            <motion.g initial={false} animate={{ y: s.y - 18 }} transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 70, damping: 14 }}>
-              <path d={wave} fill="#1C2B4A" transform="translate(-180 0)" />
-              <path d={lace} fill="none" stroke="#F4F0E4" strokeWidth={1.5} strokeDasharray={LACE} strokeLinecap="round" transform="translate(-180 0)" />
-            </motion.g>
-          </svg>
+        <div className="relative aspect-[9/7] w-full overflow-hidden rounded-[6px] bg-navy" role="img" aria-label={`Wave at ${s.name} height`}>
+          <motion.div className="absolute inset-x-0 top-0 aspect-[2/3]" initial={false} animate={{ y: offset(s.y) }}
+            transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 60, damping: 16 }}>
+            <Image src="/assets/photos/stock-wave-crest.jpg" alt="" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+          </motion.div>
+          {SIZES.map((m) => (
+            <div key={m.size} className="absolute inset-x-0 flex items-center gap-2 px-3" style={{ top: `${m.y * 100}%` }}>
+              <span className="h-px flex-1 border-t border-dashed border-paper/70" />
+              <span className="pc-label bg-navy/80 px-2 py-0.5 text-[9px] text-paper">{m.name}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

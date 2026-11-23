@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import Waterline from "@/components/Waterline";
-import { CHOP } from "@/components/waves";
 import { products } from "@/lib/catalog";
 import PhotoBand from "@/components/PhotoBand";
 
@@ -30,8 +28,7 @@ export default function StoryPage() {
           <span>Born in Paradise Cove, sold in La Jolla.</span>
         </h1>
       </section>
-      <Waterline line color="#1C2B4A" height={36} comps={CHOP} scale={0.8} duration={22} />
-      <PhotoBand src="/assets/photos/bluff-surfer.jpg" alt="A surfer on the bluff at sunset, board under his arm" title="Sun · Salt · Surf" line="Real spots. Real slang. Real local history." tone="paper" position="60% 45%" />
+      <PhotoBand src="/assets/photos/stock-wave-crest.jpg" alt="A wave cresting at dusk" title="Sun · Salt · Surf" position="50% 62%" line="Real spots. Real slang. Real local history." tone="paper" />
 
       <section aria-labelledby="where-from" className="py-20 md:py-28">
         <div className="wrap grid items-center gap-14 md:grid-cols-2">

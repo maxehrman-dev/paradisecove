@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import InstagramFeed from "@/components/InstagramFeed";
-import Waterline from "@/components/Waterline";
-import { SWELL } from "@/components/waves";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Find us", description: "Find Paradise Cove Surf Club at ATLAS, Westfield UTC, La Jolla. First drop coming soon." };
@@ -29,7 +27,6 @@ export default function FindUsPage() {
           <iframe title="Map: ATLAS at Westfield UTC, La Jolla" src={`https://www.google.com/maps?q=${Q}&output=embed`} className="block aspect-[4/3] h-auto w-full" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
         </div>
       </section>
-      <Waterline line color="#1C2B4A" height={40} comps={SWELL} scale={0.8} duration={22} />
       <section aria-labelledby="drop" className="bg-cream py-16 md:py-20">
         <div className="wrap grid max-w-[640px] justify-items-center gap-4 text-center">
           <h2 id="drop" className="pc-head text-[clamp(32px,5vw,56px)]">First drop coming soon.</h2>

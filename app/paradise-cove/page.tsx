@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import Waterline from "@/components/Waterline";
 import SizeBySwell from "@/components/home/SizeBySwell";
-import { SWELL } from "@/components/waves";
 import { productById } from "@/lib/catalog";
 import { SITE, LAUNCHED } from "@/lib/site";
 
@@ -30,10 +28,9 @@ export default function ParadiseCovePage() {
             <p className="max-w-[34ch] text-navy/80">Soft, coastal, embroidered. Wish you were here.</p>
           </div>
           <Reveal slow className="relative aspect-[4/5] w-full overflow-hidden rounded-[6px] max-md:max-h-[70svh]">
-            <Image src="/assets/photos/crewneck-beach.jpg" alt="Wearing the off-shoulder crewneck at the beach" fill priority sizes="(min-width: 768px) 42vw, 100vw" className="object-cover object-[50%_30%]" />
+            <Image src="/assets/photos/stock-pink-sunset-surfer.jpg" alt="A surfer paddling out at a pink sunset" fill priority sizes="(min-width: 768px) 42vw, 100vw" className="object-cover object-[60%_50%]" />
           </Reveal>
         </div>
-        <Waterline line color="#E8A0B4" height={40} comps={SWELL} scale={0.8} duration={34} />
       </section>
 
       {/* The crewneck, front and back */}

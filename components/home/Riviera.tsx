@@ -1,8 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
-import { clubs, products, INK, CARD, type Product } from "@/lib/catalog";
+import { clubs, INK, CARD } from "@/lib/catalog";
 
 /** Scalloped awning valance. Rust and cream only. */
 export function Awning({ className = "" }: { className?: string }) {
@@ -31,23 +30,7 @@ export function MemberCard({ i, name, motto, ink, card }: { i: number; name: str
   );
 }
 
-/** A tee hanging on the rack: the real back print on a rust-bordered card. */
-function RackCard({ p }: { p: Product }) {
-  const club = clubs.find((c) => c.product === p.id);
-  const img = (p.images as { back: string }).back;
-  return (
-    <article className="w-[240px] shrink-0 overflow-hidden rounded-[6px] border-[3px] border-rust bg-cream sm:w-[280px]">
-      <div className="relative aspect-square bg-studio"><Image src={img} alt={`${p.name}, back print`} fill sizes="280px" className="object-cover" /></div>
-      <div className="grid gap-1 border-t-[3px] border-rust p-4">
-        <div className="flex items-center justify-between cp-fine text-[9px] text-navy/70"><span>No. {"number" in p ? p.number : ""}</span><span>{club ? club.name : "Club Paradise"}</span></div>
-        <h3 className="cp-head text-[22px] text-rust">{p.name.replace(/ Tee$/, "")}</h3>
-        <p className="cp-fine text-[9px] text-navy/70">Tee · ${p.price}</p>
-      </div>
-    </article>
-  );
-}
-
-/** 4. Riviera break: rust and cream awning stripes and a rack of club cards sliding in sideways. The one loud moment. */
+/** 4. Riviera break: rust and cream awning stripes and a rack of club membership cards sliding in sideways. The one loud moment. */
 export default function Riviera() {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
@@ -74,7 +57,7 @@ export default function Riviera() {
         </div>
         <div className="mt-10 md:mt-14">
           <motion.div style={reduce ? undefined : { x }} className={`flex gap-4 px-4 will-change-transform sm:gap-6 ${reduce ? "overflow-x-auto pb-4" : ""}`}>
-            {products.filter((p) => p.id.startsWith("tee-")).map((p) => <RackCard key={p.id} p={p} />)}
+            {clubs.map((c, i) => <MemberCard key={c.id} i={i} {...c} />)}
           </motion.div>
         </div>
       </div>

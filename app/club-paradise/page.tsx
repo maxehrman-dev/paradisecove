@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import WaveWipe from "@/components/WaveWipe";
 import ClubCard from "@/components/club/ClubCard";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
@@ -30,8 +29,6 @@ export default function ClubParadisePage() {
   const tees = products.filter((p) => p.collection === "club-paradise");
   return (
     <div className="bg-cream text-navy">
-      <WaveWipe />
-
       {/* Under the awning */}
       <section aria-labelledby="cp-title" className="relative">
         <Awning />
@@ -44,7 +41,7 @@ export default function ClubParadisePage() {
             <p className="cp-fine text-[10px] text-navy/60">Members since forever · {SITE.address} · {SITE.coords}</p>
           </div>
           <div className="relative aspect-[5/4] w-full overflow-hidden border-[3px] border-rust">
-            <Image src="/assets/photos/barrel.jpg" alt="A surfer carving a wave below the bluffs" fill priority sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
+            <Image src="/assets/photos/stock-blue-wave-surfer.jpg" alt="A surfer carving across a blue wave" fill priority sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
           </div>
         </div>
       </section>
