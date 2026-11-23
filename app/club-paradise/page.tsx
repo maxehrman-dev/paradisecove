@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import ScrollSequence, { type Beat } from "@/components/ScrollSequence";
+import PhotoBand from "@/components/PhotoBand";
 import ClubCard from "@/components/club/ClubCard";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
@@ -25,6 +27,24 @@ function StripeBand() {
   );
 }
 
+const ridePlaque = "edge-l pb-8 md:pb-12";
+function RideLine({ no, title, line }: { no: string; title: string; line: string }) {
+  return (
+    <div className={ridePlaque}>
+      <div className="grid max-w-[460px] gap-3 border border-rust bg-cream p-6 md:p-8">
+        <span className="cp-fine text-[10px] text-navy/60">{no}</span>
+        <p className="cp-head text-[clamp(30px,4vw,54px)] text-rust">{title}</p>
+        <p className="cp-quote text-lg leading-snug text-navy">{line}</p>
+      </div>
+    </div>
+  );
+}
+const RIDE: Beat[] = [
+  { from: 0.04, to: 0.3, children: <RideLine no="06:10 · Drop in" title="Early tide." line="First light, glassy, nobody out yet." /> },
+  { from: 0.4, to: 0.64, children: <RideLine no="06:11 · Trim" title="Same crew." line="Since forever. Locals only, guests welcome." /> },
+  { from: 0.76, to: 1, children: <RideLine no="06:12 · Kick out" title="Siesta next." line="Surf early. Nap often. Stay for sunset." /> },
+];
+
 export default function ClubParadisePage() {
   const tees = products.filter((p) => p.collection === "club-paradise");
   return (
@@ -41,10 +61,18 @@ export default function ClubParadisePage() {
             <p className="cp-fine border-t border-rust/40 pt-4 text-[9px] text-navy/55">Members since forever · {SITE.address} · {SITE.coords}</p>
           </div>
           <div className="relative aspect-[4/5] w-full overflow-hidden md:aspect-auto md:min-h-[78svh]">
-            <Image src="/assets/photos/stock-blue-wave-surfer.jpg" alt="A surfer carving across a blue wave" fill priority sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+            <Image src="/assets/photos/stock-club-crew-sunset.jpg" alt="Two surfers walking the beach at sunset, boards under their arms" fill priority sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-[60%_50%]" />
           </div>
         </div>
       </section>
+
+      {/* The ride, told by scroll */}
+      <ScrollSequence
+        desktop={{ dir: "/assets/scroll/ride-d", count: 110 }}
+        length={300} fit="cover" mobileFit="contain" bg="#F4F0E4" poster={40}
+        alt="A surfer drops in, rides the wave across, and kicks out as you scroll"
+        beats={RIDE}
+      />
 
       <StripeBand />
 
@@ -78,6 +106,8 @@ export default function ClubParadisePage() {
           </ol>
         </div>
       </section>
+
+      <PhotoBand club tone="cream" src="/assets/photos/stock-club-palm.jpg" alt="A single palm against a clear teal sky" eyebrow="Club Paradise · Men's" title="Members since forever." line="Locals only, guests welcome." position="50% 40%" />
 
       <StripeBand />
 

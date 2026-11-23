@@ -48,7 +48,7 @@ export default function Doors({ locked }: { locked: boolean }) {
           <rect width="400" height="36" fill="#1C2B4A" />
           {Array.from({ length: 10 }, (_, i) => <path key={i} d={`M${i * 40} 0 H${i * 40 + 40} V22 a20 14 0 0 1 -40 0 Z`} fill={i % 2 ? "#F4F0E4" : "#C2603A"} />)}
         </svg>
-        <ParallaxPhoto src="/assets/photos/stock-barrel-surfer.jpg" alt="A surfer deep in a green barrel" strength={6} sizes="(min-width: 768px) 55vw, 100vw" position="45% 50%" className="min-h-0 flex-1" />
+        <ParallaxPhoto src="/assets/photos/stock-club-longboard.jpg" alt="A yellow longboard standing in the sand on a hazy beach" strength={6} sizes="(min-width: 768px) 55vw, 100vw" position="50% 55%" className="min-h-0 flex-1" />
         <div className="flex items-center justify-between gap-4 bg-navy px-5 py-6 text-cream sm:px-8 md:px-10 md:py-8">
           <div className="grid gap-2">
             <span className="cp-fine text-[10px] text-cream/65">Men&apos;s</span>

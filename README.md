@@ -42,11 +42,28 @@ Stock, from Unsplash under the Unsplash License (free for commercial use, no att
 | stock-shore-sunrise.jpg | 1476673160081-cf065607f449 | Home shore |
 | stock-aerial-surf.jpg | 1505142468610-359e7d316be0 | Home doors background |
 | stock-pink-sunset-surfer.jpg | 1502933691298-84fc14542831 | Paradise Cove door, Paradise Cove hero |
-| stock-barrel-surfer.jpg | 1502680390469-be75c86b636f | Club Paradise door |
-| stock-blue-wave-surfer.jpg | 1455729552865-3658a5d39692 | Club Paradise hero |
+| stock-club-longboard.jpg | 1531722569936-825d3dd91b15 | Club Paradise door |
+| stock-club-crew-sunset.jpg | 1517699418036-fb5d179fef0c | Club Paradise hero |
+| stock-club-palm.jpg | 1520454974749-611b7248ffdb | Club Paradise photo band |
 | stock-sunset-silhouette.jpg | 1415931633537-351070d20b81 | Home photo band |
 | stock-wave-crest.jpg | 1500375592092-40eb2168fd21 | Size by Swell, Story band |
 | stock-golden-shore.jpg | 1473116763249-2faaef81ccda | Home story |
 | stock-underwater-light.jpg | 1530053969600-caed2596d242 | Footer |
 
 Swap any of them for your own shoot with the same file name.
+
+## Scroll videos
+`components/ScrollSequence.tsx` plays a video by scroll: the first frame shows on arrival, and scrolling moves it forward and back. Frames are WebP stills drawn to a canvas, blended between neighbours, loaded coarse-first so it scrubs right away. Reduced motion shows one still frame with no pinning.
+
+| Folder | Source | Used on |
+| --- | --- | --- |
+| `public/assets/scroll/shore-d`, `shore-m` | Mixkit 1078 "Waves crash on the shore" (first 40 s, 120 frames; `-m` is a centered portrait crop) | Home opener |
+| `public/assets/scroll/ride-d` | Mixkit 1127 "Person surfing" (110 frames, cropped closer) | Club Paradise, the ride |
+
+Mixkit videos are free for commercial use under the Mixkit License (no attribution). To swap a clip, re-export frames with ffmpeg, for example:
+
+```bash
+ffmpeg -t 40 -i clip.mp4 -vf "fps=120/40,scale=1200:-2" -c:v libwebp -quality 42 public/assets/scroll/shore-d/%03d.webp
+```
+
+Then update `count` where the sequence is used.
