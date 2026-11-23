@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import Waterline from "@/components/Waterline";
 import { CHOP } from "@/components/waves";
 import { products } from "@/lib/catalog";
+import PhotoBand from "@/components/PhotoBand";
 
 export const metadata: Metadata = { title: "Story", description: "The big surf brands lost their touch. We make pieces about real places. Born in Paradise Cove, sold in La Jolla." };
 
@@ -30,6 +31,7 @@ export default function StoryPage() {
         </h1>
       </section>
       <Waterline line color="#1C2B4A" height={36} comps={CHOP} scale={0.8} duration={22} />
+      <PhotoBand src="/assets/photos/bluff-surfer.jpg" alt="A surfer on the bluff at sunset, board under his arm" title="Sun · Salt · Surf" line="Real spots. Real slang. Real local history." tone="paper" position="60% 45%" />
 
       <section aria-labelledby="where-from" className="py-20 md:py-28">
         <div className="wrap grid items-center gap-14 md:grid-cols-2">

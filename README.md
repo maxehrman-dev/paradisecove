@@ -29,3 +29,6 @@ Paste real post links from @paradisecovesurf into `data/instagram.json` → `pos
 
 ## Product images
 `public/assets/products` holds full-size exports of the Canva mockups: every tee front and back (PCSC Approved Lineup + PCSC Final 8), the off-shoulder crewneck front and back with three real close-up crops, and the hoodie front and back. `public/assets/photos` holds the two lifestyle photos from the brand deck. Replace any file with a real photo shoot later, keeping the file name.
+
+## Lifestyle photos
+`public/assets/photos`: the wake-surf and hoodie-on-the-boat photos (brand deck), plus four crops from the Paradise Cove Launch deck in Canva: `bluff-surfer.jpg`, `barrel.jpg`, `woodie.jpg`, `crewneck-beach.jpg`. Confirm you own or have a license for the Launch deck images before going live; swap any of them for your own shoot with the same file name.

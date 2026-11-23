@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import WaveWipe from "@/components/WaveWipe";
 import ClubCard from "@/components/club/ClubCard";
 import ProductCard from "@/components/ProductCard";
@@ -34,12 +35,17 @@ export default function ClubParadisePage() {
       {/* Under the awning */}
       <section aria-labelledby="cp-title" className="relative">
         <Awning />
-        <div className="wrap grid justify-items-center gap-5 pb-16 pt-12 text-center md:pb-24 md:pt-16">
-          <span className="cp-fine text-navy/70">Men's · Surf Club</span>
-          <h1 id="cp-title" className="cp-head text-[clamp(52px,12vw,150px)] text-rust">Club<br />Paradise</h1>
-          <p className="cp-club text-sm sm:text-base">Surf · Siesta · Sunset</p>
-          <p className="cp-quote max-w-[34ch] text-[clamp(19px,2.4vw,26px)] leading-snug">Early tide. Late sunsets. The same crew since forever. Locals only, guests welcome.</p>
-          <p className="cp-fine text-[10px] text-navy/60">Members since forever · {SITE.address} · {SITE.coords}</p>
+        <div className="wrap grid items-center gap-10 pb-16 pt-10 md:grid-cols-[1fr_1.15fr] md:gap-14 md:pb-24 md:pt-14">
+          <div className="grid justify-items-center gap-5 text-center md:justify-items-start md:text-left">
+            <span className="cp-fine text-navy/70">Men's · Surf Club</span>
+            <h1 id="cp-title" className="cp-head text-[clamp(52px,8vw,112px)] text-rust">Club<br />Paradise</h1>
+            <p className="cp-club text-sm sm:text-base">Surf · Siesta · Sunset</p>
+            <p className="cp-quote max-w-[34ch] text-[clamp(19px,2.2vw,24px)] leading-snug">Early tide. Late sunsets. The same crew since forever. Locals only, guests welcome.</p>
+            <p className="cp-fine text-[10px] text-navy/60">Members since forever · {SITE.address} · {SITE.coords}</p>
+          </div>
+          <div className="relative aspect-[5/4] w-full overflow-hidden border-[3px] border-rust">
+            <Image src="/assets/photos/barrel.jpg" alt="A surfer carving a wave below the bluffs" fill priority sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
+          </div>
         </div>
       </section>
 

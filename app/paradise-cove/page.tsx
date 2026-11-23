@@ -20,13 +20,18 @@ export default function ParadiseCovePage() {
     <div className="bg-paper text-navy">
       {/* Quiet opening */}
       <section aria-labelledby="pc-title" className="relative">
-        <div className="wrap grid justify-items-center gap-6 pb-20 pt-16 text-center md:pb-28 md:pt-24">
-          <h1 id="pc-title" className="sr-only">Paradise Cove, women&apos;s</h1>
-          <span className="pc-label text-navy/60">Women&apos;s</span>
-          <Image src="/assets/logos/script-navy.png" alt="Paradise Cove" width={1022} height={193} priority className="logo-fade h-auto w-[min(620px,86%)]" />
-          <span className="h-[2px] w-16 bg-coral" aria-hidden="true" />
-          <p className="pc-head text-[clamp(22px,3.2vw,34px)] tracking-[.24em]">Sun · Salt · Surf</p>
-          <p className="max-w-[34ch] text-navy/80">Soft, coastal, embroidered. Wish you were here.</p>
+        <div className="wrap grid items-center gap-10 pb-16 pt-10 md:grid-cols-[1fr_0.9fr] md:gap-16 md:pb-24 md:pt-16">
+          <div className="grid justify-items-center gap-6 text-center md:justify-items-start md:text-left">
+            <h1 id="pc-title" className="sr-only">Paradise Cove, women&apos;s</h1>
+            <span className="pc-label text-navy/60">Women&apos;s</span>
+            <Image src="/assets/logos/script-navy.png" alt="Paradise Cove" width={1022} height={193} priority className="logo-fade h-auto w-[min(560px,90%)]" />
+            <span className="h-[2px] w-16 bg-coral" aria-hidden="true" />
+            <p className="pc-head text-[clamp(22px,3.2vw,34px)] tracking-[.24em]">Sun · Salt · Surf</p>
+            <p className="max-w-[34ch] text-navy/80">Soft, coastal, embroidered. Wish you were here.</p>
+          </div>
+          <Reveal slow className="relative aspect-[4/5] w-full overflow-hidden rounded-[6px] max-md:max-h-[70svh]">
+            <Image src="/assets/photos/crewneck-beach.jpg" alt="Wearing the off-shoulder crewneck at the beach" fill priority sizes="(min-width: 768px) 42vw, 100vw" className="object-cover object-[50%_30%]" />
+          </Reveal>
         </div>
         <Waterline line color="#E8A0B4" height={40} comps={SWELL} scale={0.8} duration={34} />
       </section>
