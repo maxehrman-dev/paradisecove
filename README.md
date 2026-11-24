@@ -67,3 +67,10 @@ ffmpeg -t 40 -i clip.mp4 -vf "fps=120/40,scale=1200:-2" -c:v libwebp -quality 42
 ```
 
 Then update `count` where the sequence is used.
+
+## Artifact preview
+The claude.ai artifact is a static copy of the site: a Next static export (in a scratch copy with `app/api` removed and `output: "export"`, `images.unoptimized: true`), turned into plain pages by `scripts/artifact/build.py`. `scripts/artifact/app.js` replaces React in that copy, wiring scroll videos, parallax, Size by Swell, card flips and signup through the `data-*` hooks in the components. The signup there only shows a message, and the map links out, since an artifact can't call the API or embed Google Maps.
+
+```bash
+python3 scripts/artifact/build.py <export>/out public <artifact-folder>
+```

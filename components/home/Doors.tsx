@@ -16,7 +16,7 @@ function Door({ href, locked, label, delay, children }: { href: string; locked: 
   const reduce = useReducedMotion();
   const inner = "group relative flex h-full flex-col";
   return (
-    <motion.div className="relative h-[78svh] min-h-[520px] md:h-full md:min-h-0 md:flex-1 md:transition-[flex-grow] md:duration-700 md:ease-out md:hover:grow-[1.25]"
+    <motion.div data-reveal="" className="relative h-[78svh] min-h-[520px] md:h-full md:min-h-0 md:flex-1 md:transition-[flex-grow] md:duration-700 md:ease-out md:hover:grow-[1.25]"
       initial={reduce ? false : { opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "0px 0px -15% 0px" }} transition={{ duration: 1.1, delay, ease: [0.22, 1, 0.36, 1] }}>
       {locked ? <div className={inner} role="group" aria-label={`${label}. Opens with the first drop.`}>{children}</div> : <Link href={href} className={inner} aria-label={label}>{children}</Link>}
     </motion.div>

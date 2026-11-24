@@ -37,7 +37,7 @@ export default function Riviera() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const x = useTransform(scrollYProgress, [0.1, 0.9], ["22%", "-58%"]);
   return (
-    <section ref={ref} aria-labelledby="riviera" className="relative overflow-hidden text-navy">
+    <section ref={ref} data-rack-section="" aria-labelledby="riviera" className="relative overflow-hidden text-navy">
       <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
         <defs>
           <pattern id="awning" width="96" height="10" patternUnits="userSpaceOnUse">
@@ -56,7 +56,7 @@ export default function Riviera() {
           </div></div>
         </div>
         <div className="mt-10 md:mt-14">
-          <motion.div style={reduce ? undefined : { x }} className={`flex gap-4 px-4 will-change-transform sm:gap-6 ${reduce ? "overflow-x-auto pb-4" : ""}`}>
+          <motion.div data-rack="" style={reduce ? undefined : { x }} className={`flex gap-4 px-4 will-change-transform sm:gap-6 ${reduce ? "overflow-x-auto pb-4" : ""}`}>
             {clubs.map((c, i) => <MemberCard key={c.id} i={i} {...c} />)}
           </motion.div>
         </div>

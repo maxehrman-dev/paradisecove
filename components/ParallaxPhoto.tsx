@@ -13,7 +13,7 @@ export default function ParallaxPhoto({ src, alt, className = "", strength = 8, 
   const y = useTransform(scrollYProgress, [0, 1], [`-${strength}%`, `${strength}%`]);
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
-      <motion.div className="absolute inset-x-0 will-change-transform" style={reduce ? { top: 0, bottom: 0 } : { y, top: `-${strength + 2}%`, bottom: `-${strength + 2}%` }}>
+      <motion.div data-parallax={strength} className="absolute inset-x-0 will-change-transform" style={reduce ? { top: 0, bottom: 0 } : { y, top: `-${strength + 2}%`, bottom: `-${strength + 2}%` }}>
         <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className="object-cover" style={{ objectPosition: position }} />
       </motion.div>
     </div>

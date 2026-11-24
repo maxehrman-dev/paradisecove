@@ -20,7 +20,7 @@ export default function SignupForm({ tone = "dark" }: { tone?: "dark" | "light" 
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="grid gap-3">
+    <form data-signup="" onSubmit={onSubmit} noValidate className="grid gap-3">
       <label htmlFor={`email-${tone}`} className={`pc-label text-[10px] tracking-[.34em] ${dark ? "text-cream/60" : "text-navy/55"}`}>First drop email</label>
       <div className={`flex items-stretch border-b ${dark ? "border-cream/50 focus-within:border-coral" : "border-navy focus-within:border-navy"}`}>
         <input id={`email-${tone}`} name="email" type="email" autoComplete="email" required placeholder="you@email.com" disabled={state === "done"}

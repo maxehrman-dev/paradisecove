@@ -20,7 +20,7 @@ function BeatLayer({ p, beat, first }: { p: MotionValue<number>; beat: Beat; fir
   const y = useTransform(p, (v) => (1 - level(v)) * (v < beat.from ? 24 : -24));
   const [live, setLive] = useState(first);
   useMotionValueEvent(opacity, "change", (o) => setLive(o > 0.05));
-  return <motion.div style={{ opacity, y }} aria-hidden={!live} className={`absolute inset-x-0 bottom-0 ${live ? "" : "pointer-events-none"} ${beat.className ?? ""}`}>{beat.children}</motion.div>;
+  return <motion.div data-beat-from={beat.from} data-beat-to={beat.to} data-beat-first={first ? "1" : undefined} style={{ opacity, y }} aria-hidden={!live} className={`absolute inset-x-0 bottom-0 ${live ? "" : "pointer-events-none"} ${beat.className ?? ""}`}>{beat.children}</motion.div>;
 }
 
 /**
@@ -109,7 +109,7 @@ export default function ScrollSequence({ desktop, mobile, length = 320, fit = "c
   useMotionValueEvent(scrollYProgress, "change", (v) => { if (reduce) return; progress.current = v; redraw(); });
 
   return (
-    <section ref={ref} className={`relative ${className}`} style={{ height: reduce ? undefined : `${length}svh`, background: bg }}>
+    <section ref={ref} data-seq={JSON.stringify({ d: desktop, m: mobile, fit, mfit: mobileFit, bg, poster: poster ?? 0 })} className={`relative ${className}`} style={{ height: reduce ? undefined : `${length}svh`, background: bg }}>
       <div className={`${reduce ? "relative" : "sticky top-0"} h-[100svh] overflow-hidden`}>
         <canvas ref={canvas} role="img" aria-label={alt} className="absolute inset-0 h-full w-full" />
         {beats.map((b, i) => reduce
