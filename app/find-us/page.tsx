@@ -30,7 +30,7 @@ export default function FindUsPage() {
       <section aria-labelledby="drop" className="bg-cream py-24 md:py-32">
         <div className="wrap grid max-w-[640px] justify-items-center gap-5 text-center">
           <h2 id="drop" className="pc-head text-[clamp(32px,5vw,56px)]">First drop coming soon.</h2>
-          <p className="text-[15px] leading-relaxed text-navy/75">Wish you were here. Leave your email and we&apos;ll tell you the day it lands.</p>
+          <p className="text-[15px] leading-relaxed text-navy/75">Leave your email and we&apos;ll tell you the day it lands.</p>
           <a href="#signup" className="btn-solid mt-4">Get the drop email</a>
           <p className="eyebrow pt-8">{SITE.address} · {SITE.coords}</p>
         </div>

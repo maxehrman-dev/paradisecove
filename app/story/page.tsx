@@ -40,7 +40,6 @@ export default function StoryPage() {
             <h2 id="where-from" className="pc-head text-[clamp(30px,4.4vw,52px)]">A surf club you can wear</h2>
             <p className="max-w-[44ch] text-[17px] leading-relaxed text-navy/80">Paradise Cove is salt air, the pier and sunset sessions. We started there, and now we sell in La Jolla.</p>
             <p className="max-w-[44ch] text-[17px] leading-relaxed text-navy/80">Heavy cotton you feel before you read it. Every piece is named for a real spot, and every size is named for a wave.</p>
-            <p className="eyebrow">Wish you were here.</p>
           </Reveal>
         </div>
       </section>

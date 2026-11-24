@@ -25,7 +25,7 @@ export default function ParadiseCovePage() {
             <Image src="/assets/logos/script-navy.png" alt="Paradise Cove" width={1022} height={193} priority className="logo-fade h-auto w-[min(560px,90%)]" />
             <span className="h-px w-16 bg-coral" aria-hidden="true" />
             <p className="pc-head text-[clamp(22px,3.2vw,34px)] tracking-[.24em]">Sun · Salt · Surf</p>
-            <p className="max-w-[34ch] text-[15px] leading-relaxed text-navy/75">Soft, coastal, embroidered. Wish you were here.</p>
+            <p className="max-w-[34ch] text-[15px] leading-relaxed text-navy/75">Soft, coastal, embroidered. The beach side of the club.</p>
           </div>
           <Reveal slow className="relative aspect-[4/5] w-full overflow-hidden md:aspect-auto md:min-h-[82svh]">
             <Image src="/assets/photos/stock-pink-sunset-surfer.jpg" alt="Close-up of a surfer riding an orange board through turquoise water" fill priority sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-[60%_50%]" />

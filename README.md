@@ -57,7 +57,7 @@ Swap any of them for your own shoot with the same file name.
 
 | Folder | Source | Used on |
 | --- | --- | --- |
-| `public/assets/scroll/shore-d`, `shore-m` | Mixkit 1078 "Waves crash on the shore" (first 40 s, 120 frames; `-m` is a centered portrait crop) | Home opener |
+| `public/assets/scroll/wave-d`, `wave-m` | Mixkit 1127 "Person surfing" (120 frames, warm grade, crop follows the surfer; built by `scripts/ride-frames.py`) | Home opener |
 | `public/assets/scroll/sunset-d`, `sunset-m` | Mixkit 2168 "Bright orange sunset on beach" (100 frames; `-m` is a portrait crop on the sun) | Club Paradise, house rules at sunset |
 
 Mixkit videos are free for commercial use under the Mixkit License (no attribution). To swap a clip, re-export frames with ffmpeg, for example:
