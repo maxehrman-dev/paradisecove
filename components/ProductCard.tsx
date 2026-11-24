@@ -19,6 +19,11 @@ export default function ProductCard({ p, accent = "rust" }: { p: Product; accent
           <Slot file={`${p.id}.jpg`} label={p.name} className="absolute inset-0" />
         )}
         {later && <span className="cp-fine absolute left-0 top-0 bg-paper px-3 py-2 text-[9px] text-navy">Later drop</span>}
+        {!later && imgs.back && imgs.front && (
+          <span className="cp-fine absolute right-0 top-0 bg-paper px-3 py-2 text-[8.5px] text-navy/70" aria-hidden="true">
+            <span className="group-hover:hidden">Back</span><span className="hidden group-hover:inline">Front</span>
+          </span>
+        )}
       </div>
       <div className="grid gap-2 px-4 pb-6 pt-4 sm:px-5"><div className="flex items-baseline justify-between gap-3">
         <h3 className="grid font-club text-[13px] font-extrabold uppercase tracking-[.08em] [font-stretch:112%]">
@@ -27,6 +32,7 @@ export default function ProductCard({ p, accent = "rust" }: { p: Product; accent
         <span className="font-club text-sm font-extrabold tabular-nums">{p.price ? `$${p.price}` : ""}</span>
       </div>
       {"line" in p && p.line ? <p className="cp-quote text-[15px] leading-snug text-navy/75">{p.line}</p> : null}
+      {accent === "rust" && !later && imgs.front ? <p className="cp-fine text-[8.5px] text-navy/55">Back print · Left chest</p> : null}
       <p className={`cp-fine mt-1 border-t pt-3 text-[8.5px] text-navy/55 ${accent === "rust" ? "border-rust/40" : "border-coral"}`}>{later ? "Coming in a later drop" : SITE.where}</p></div>
     </article>
   );

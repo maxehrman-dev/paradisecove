@@ -39,10 +39,10 @@ function RideLine({ no, title, line }: { no: string; title: string; line: string
     </div>
   );
 }
-const RIDE: Beat[] = [
-  { from: 0.04, to: 0.3, children: <RideLine no="06:10 · Drop in" title="Early tide." line="First light, glassy, nobody out yet." /> },
-  { from: 0.4, to: 0.64, children: <RideLine no="06:11 · Trim" title="Same crew." line="Since forever. Locals only, guests welcome." /> },
-  { from: 0.76, to: 1, children: <RideLine no="06:12 · Kick out" title="Siesta next." line="Surf early. Nap often. Stay for sunset." /> },
+const SUNSET: Beat[] = [
+  { from: 0.04, to: 0.3, children: <RideLine no="House rule 01" title="Surf early." line="First light, glassy, nobody out yet." /> },
+  { from: 0.4, to: 0.64, children: <RideLine no="House rule 02" title="Nap often." line="Siesta in the shade. Same crew since forever." /> },
+  { from: 0.76, to: 1, children: <RideLine no="House rule 04" title="Stay for sunset." line="Locals only, guests welcome." /> },
 ];
 
 export default function ClubParadisePage() {
@@ -54,7 +54,7 @@ export default function ClubParadisePage() {
         <Awning />
         <div className="grid md:grid-cols-2">
           <div className="edge-l grid content-center justify-items-center gap-6 py-14 text-center md:justify-items-start md:py-20 md:text-left">
-            <span className="cp-fine text-navy/70">Men's · Surf Club</span>
+            <span className="cp-fine text-navy/70">Men's · Surf Club · Drop 01</span>
             <h1 id="cp-title" className="cp-head text-[clamp(52px,5.2vw,84px)] text-rust">Club<br />Paradise</h1>
             <p className="cp-club text-sm sm:text-base">Surf · Siesta · Sunset</p>
             <p className="cp-quote max-w-[34ch] text-[clamp(19px,2.2vw,24px)] leading-snug">Early tide. Late sunsets. The same crew since forever. Locals only, guests welcome.</p>
@@ -66,12 +66,13 @@ export default function ClubParadisePage() {
         </div>
       </section>
 
-      {/* The ride, told by scroll */}
+      {/* The day, told by scroll: a slow drift past the palms at sunset */}
       <ScrollSequence
-        desktop={{ dir: "/assets/scroll/ride-d", count: 110 }}
-        length={300} fit="cover" mobileFit="contain" bg="#F4F0E4" poster={40}
-        alt="A surfer drops in, rides the wave across, and kicks out as you scroll"
-        beats={RIDE}
+        desktop={{ dir: "/assets/scroll/sunset-d", count: 100 }}
+        mobile={{ dir: "/assets/scroll/sunset-m", count: 100 }}
+        length={300} bg="#1C2B4A" poster={50}
+        alt="Palms drifting past a red and orange sunset over the water as you scroll"
+        beats={SUNSET}
       />
 
       <StripeBand />
@@ -116,7 +117,7 @@ export default function ClubParadisePage() {
         <div className="wrap">
           <Reveal className="mb-10 grid gap-3 md:mb-14 md:grid-cols-[1fr_auto] md:items-end">
             <div className="grid gap-3">
-              <span className="cp-fine text-[10px] text-navy/55">Tees · $40 · {LAUNCHED ? SITE.where : "First drop coming soon"}</span>
+              <span className="cp-fine text-[10px] text-navy/55">Drop 01 · {tees.filter((t) => t.status !== "later-drop").length} tees · $40 · {LAUNCHED ? SITE.where : "First drop coming soon"}</span>
               <h2 id="rack" className="cp-head text-[clamp(40px,7vw,84px)]">The Rack</h2>
             </div>
             <p className="cp-quote max-w-[32ch] text-lg">Real places, printed on heavy cotton. The back is the point.</p>
